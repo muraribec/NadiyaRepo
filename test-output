@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.0","implementation":{"name":"cucumber-jvm","version":"6.9.0"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"17.0.7+7"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1695612252","nanos":25516000}}},{"source":{"uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","data":"Feature: Facebook Login Feature\r\n\r\n    @smokeTest\r\n\t\tScenario: Fcaebook Login test scenario\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters userName and password\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser \r\n  \t\r\n  \tScenario Outline: Fcaebook Login test scenario with parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    | muraribec@gmail.com\t|\tselenium\t| \r\n    #| murarik@gmail.com\t|\tselenium\t| \r\n    #| murarib@gmail.com\t|\tselenium\t| \r\n    #| murariec@gmail.com\t|\tselenium\t| \r\n    #| murarie1@gmail.com\t|\tselenium\t| \r\n    #| murarib23@gmail.com\t|\tselenium\t| \r\n    \r\n    Scenario Outline: Fcaebook Login test scenario with parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    | muraribec@gmail.com\t|\tselenium\t|\r\n    Scenario Outline: Fcaebook Login test scenario with parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    | muraribec@gmail.com\t|\tselenium\t|\r\n    \r\n    Scenario Outline: Fcaebook Login test scenario with invalid parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    | muraribas@gmail.com\t|\tselenium\t|\r\n    \r\n    @Retesting\r\n    Scenario Outline: Fcaebook Login test scenario with valid parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    | muraribdsds@gmail.com\t|\tselenium\t|\r\n    Scenario Outline: Fcaebook Login test scenario with space parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    |  \t|\tselenium\t|\r\n    Scenario Outline: Fcaebook Login test scenario with correct and invalid parameterized the data\r\n    Given user is already on login page\r\n    When Title of the login page is facebooklogin\r\n    Then user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"\r\n    Then user clicks on login button\r\n  \tAnd user is on HomePage  \r\n  \tThen close the browser\r\n  \t\r\n  \tExamples:\r\n    | username\t|\tpassword\t|\r\n    | muraribedasdc@gmail.com\t|\tselenium\t|\r\n   ","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Facebook Login Feature","children":[{"scenario":{"location":{"line":4,"column":3},"tags":[{"location":{"line":3,"column":5},"name":"@smokeTest","id":"a6c44c77-0278-4f0f-8b8e-dcd98bfb1dd3"}],"keyword":"Scenario","name":"Fcaebook Login test scenario","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"user is already on login page","id":"2c2a03ea-d726-439d-a004-8e5038962dc0"},{"location":{"line":6,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"bf12a599-d964-4752-b27f-c65301c31c2c"},{"location":{"line":7,"column":5},"keyword":"Then ","text":"user enters userName and password","id":"fe6d5987-3498-4cb9-a514-d25e02587aca"},{"location":{"line":8,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"2bc464c5-6740-4417-9679-0a60e625043c"},{"location":{"line":9,"column":4},"keyword":"And ","text":"user is on HomePage","id":"5e8fb65d-7e46-40e5-aeac-bbb3c773c935"},{"location":{"line":10,"column":4},"keyword":"Then ","text":"close the browser","id":"8e491879-d24d-4aef-8ec9-77468f88de9e"}],"id":"1f2b9a61-81ad-4b2f-9de0-4080151f4544"}},{"scenario":{"location":{"line":12,"column":4},"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with parameterized the data","steps":[{"location":{"line":13,"column":5},"keyword":"Given ","text":"user is already on login page","id":"1d2d5111-227f-417f-ba02-53e1999d05c8"},{"location":{"line":14,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"d2ea6c26-801c-433d-94f7-2229ac5c8a19"},{"location":{"line":15,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"4dbdcea3-a502-4855-abb2-7286c1ab555b"},{"location":{"line":16,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"be8c807b-0013-432c-b0ab-5caaccce0fcf"},{"location":{"line":17,"column":4},"keyword":"And ","text":"user is on HomePage","id":"861b9755-810d-40b0-aae1-1d5bf291e4b9"},{"location":{"line":18,"column":4},"keyword":"Then ","text":"close the browser","id":"ec94c97e-d30d-4674-b969-6ec2ff704e6e"}],"examples":[{"location":{"line":20,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":21,"column":5},"cells":[{"location":{"line":21,"column":7},"value":"username"},{"location":{"line":21,"column":18},"value":"password"}],"id":"1e8ab7d4-3525-45a6-9c5e-d5a02d5eb6cb"},"tableBody":[{"location":{"line":22,"column":5},"cells":[{"location":{"line":22,"column":7},"value":"muraribec@gmail.com"},{"location":{"line":22,"column":29},"value":"selenium"}],"id":"798cc0a7-98cc-4151-8457-81226c05914e"}],"id":"446c9465-ad4f-4bb8-bd18-f8491ec32023"}],"id":"4e928a53-66ee-4db2-917a-19a0112ac812"}},{"scenario":{"location":{"line":29,"column":5},"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with parameterized the data","steps":[{"location":{"line":30,"column":5},"keyword":"Given ","text":"user is already on login page","id":"aab7bfc2-14be-4599-9b3a-ccea1c61fa61"},{"location":{"line":31,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"ded6228d-0cc1-401c-b074-97852bb50597"},{"location":{"line":32,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"c5c53a65-31df-4fb3-8bc6-5c278ab6a421"},{"location":{"line":33,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"715a0d0c-ac25-4939-8e31-1fd0333f7962"},{"location":{"line":34,"column":4},"keyword":"And ","text":"user is on HomePage","id":"71cc889f-cb1c-4e5c-88f8-fdbb07e531ca"},{"location":{"line":35,"column":4},"keyword":"Then ","text":"close the browser","id":"079ab6de-1c0f-49ea-9392-33a668b2dfd4"}],"examples":[{"location":{"line":37,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":38,"column":5},"cells":[{"location":{"line":38,"column":7},"value":"username"},{"location":{"line":38,"column":18},"value":"password"}],"id":"a22ec29b-c39b-4d62-b935-a5a7f7ad686d"},"tableBody":[{"location":{"line":39,"column":5},"cells":[{"location":{"line":39,"column":7},"value":"muraribec@gmail.com"},{"location":{"line":39,"column":29},"value":"selenium"}],"id":"a77836ab-c64f-4dbc-b8d0-3a7ee325db64"}],"id":"b2c0b529-8d91-4cc1-bfec-7ff817e92e8d"}],"id":"5d27c54d-b1f5-4ef6-8469-a7f956d5e152"}},{"scenario":{"location":{"line":40,"column":5},"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with parameterized the data","steps":[{"location":{"line":41,"column":5},"keyword":"Given ","text":"user is already on login page","id":"4b33e697-4ae6-41a0-bf49-3cb6e25b18bb"},{"location":{"line":42,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"0f949ef3-5f63-4e99-a287-d682f64650f8"},{"location":{"line":43,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"e0898643-059a-473c-be7a-ff57a7f2b914"},{"location":{"line":44,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"e9dce2ac-8426-474f-ac3d-700b7a6d4ca8"},{"location":{"line":45,"column":4},"keyword":"And ","text":"user is on HomePage","id":"29cbc1fc-4995-4472-8437-76de66b7290f"},{"location":{"line":46,"column":4},"keyword":"Then ","text":"close the browser","id":"6ab3f150-8d18-4845-af8c-8b6c0eb18fc8"}],"examples":[{"location":{"line":48,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":49,"column":5},"cells":[{"location":{"line":49,"column":7},"value":"username"},{"location":{"line":49,"column":18},"value":"password"}],"id":"102a4495-156a-4df7-828c-e89b75c6c7bf"},"tableBody":[{"location":{"line":50,"column":5},"cells":[{"location":{"line":50,"column":7},"value":"muraribec@gmail.com"},{"location":{"line":50,"column":29},"value":"selenium"}],"id":"60cddf5b-c960-4ca8-88c7-236616b94d84"}],"id":"fe740b3f-a6ea-4b5f-8919-934920e21420"}],"id":"f05c4b65-e941-4b39-a54b-182f4de574b9"}},{"scenario":{"location":{"line":52,"column":5},"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with invalid parameterized the data","steps":[{"location":{"line":53,"column":5},"keyword":"Given ","text":"user is already on login page","id":"99c725b9-022c-492f-a041-3baa03293199"},{"location":{"line":54,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"132130fd-7b96-4cd9-a4a8-a1c104676619"},{"location":{"line":55,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"2d85a5dd-f324-48ca-a4b3-6652866d8bc1"},{"location":{"line":56,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"2794ee29-6156-4dca-8049-02a006646358"},{"location":{"line":57,"column":4},"keyword":"And ","text":"user is on HomePage","id":"6cb0d5bb-d45c-4c37-80b3-5a028be174d9"},{"location":{"line":58,"column":4},"keyword":"Then ","text":"close the browser","id":"c5ccd213-2b7e-41e7-97e6-32307120f0d5"}],"examples":[{"location":{"line":60,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":61,"column":5},"cells":[{"location":{"line":61,"column":7},"value":"username"},{"location":{"line":61,"column":18},"value":"password"}],"id":"787de1bd-9801-4664-8ac8-73338e395ef9"},"tableBody":[{"location":{"line":62,"column":5},"cells":[{"location":{"line":62,"column":7},"value":"muraribas@gmail.com"},{"location":{"line":62,"column":29},"value":"selenium"}],"id":"f38f4db3-5081-4431-b6cb-f31bcde6afb0"}],"id":"26f4125d-67c5-4093-a571-cf8df315bd40"}],"id":"3fe72681-1465-4860-a7d3-7f2d20102555"}},{"scenario":{"location":{"line":65,"column":5},"tags":[{"location":{"line":64,"column":5},"name":"@Retesting","id":"3a0909de-fffc-4414-a5a8-92b6d85c10f8"}],"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with valid parameterized the data","steps":[{"location":{"line":66,"column":5},"keyword":"Given ","text":"user is already on login page","id":"52bcde13-e148-4fbc-a9b7-d27af44beddf"},{"location":{"line":67,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"cfbdbe5e-2768-4780-b24f-c0756ad600f5"},{"location":{"line":68,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"d33c4b93-6aa9-4c3b-bbb5-246fb34ac355"},{"location":{"line":69,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"6f22252e-ab9c-4961-b5c1-3e3e9e0ef80c"},{"location":{"line":70,"column":4},"keyword":"And ","text":"user is on HomePage","id":"c21869c4-2609-40ad-ada4-aab968c33a6c"},{"location":{"line":71,"column":4},"keyword":"Then ","text":"close the browser","id":"020b8fbf-9511-4720-9289-6e412010cf0c"}],"examples":[{"location":{"line":73,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":74,"column":5},"cells":[{"location":{"line":74,"column":7},"value":"username"},{"location":{"line":74,"column":18},"value":"password"}],"id":"3311683a-8b5e-424c-99b5-0661ba76e57c"},"tableBody":[{"location":{"line":75,"column":5},"cells":[{"location":{"line":75,"column":7},"value":"muraribdsds@gmail.com"},{"location":{"line":75,"column":31},"value":"selenium"}],"id":"64e217b0-324b-4a2f-a65a-209c96115e7b"}],"id":"fb667623-70bd-4213-b877-d7b8173a3377"}],"id":"1c626c36-8c0d-419f-a885-94e34858e8ee"}},{"scenario":{"location":{"line":76,"column":5},"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with space parameterized the data","steps":[{"location":{"line":77,"column":5},"keyword":"Given ","text":"user is already on login page","id":"952cec91-2b70-42d1-b91c-375d46bd4766"},{"location":{"line":78,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"90930c1c-96da-493e-98e1-cf1b3fbc730f"},{"location":{"line":79,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"470343ad-b1be-4e3c-90ea-137e00633574"},{"location":{"line":80,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"218dbfb9-a706-4244-983c-75dbb5e7007e"},{"location":{"line":81,"column":4},"keyword":"And ","text":"user is on HomePage","id":"b1eda9e9-e3db-444f-82f1-8fc0588d31c2"},{"location":{"line":82,"column":4},"keyword":"Then ","text":"close the browser","id":"42fb0771-3521-4a72-b0c5-fd5a8cbf9e3b"}],"examples":[{"location":{"line":84,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":85,"column":5},"cells":[{"location":{"line":85,"column":7},"value":"username"},{"location":{"line":85,"column":18},"value":"password"}],"id":"dfe6a68b-8aea-4e27-bfab-b48a47629307"},"tableBody":[{"location":{"line":86,"column":5},"cells":[{"location":{"line":86,"column":9}},{"location":{"line":86,"column":11},"value":"selenium"}],"id":"aa37be01-6de0-4f84-96f5-a65ac098fa57"}],"id":"2ac2e3ed-e208-4869-b1b3-5d5fb687d3fd"}],"id":"4f5ee127-7a58-4f6b-b2cd-f41699a86c04"}},{"scenario":{"location":{"line":87,"column":5},"keyword":"Scenario Outline","name":"Fcaebook Login test scenario with correct and invalid parameterized the data","steps":[{"location":{"line":88,"column":5},"keyword":"Given ","text":"user is already on login page","id":"eb528584-fb6c-41d7-abb1-54bc2826092f"},{"location":{"line":89,"column":5},"keyword":"When ","text":"Title of the login page is facebooklogin","id":"cc20bebd-7668-4090-a7c8-8c0dfacdce1d"},{"location":{"line":90,"column":5},"keyword":"Then ","text":"user enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\"","id":"62ae35f8-6366-443c-8ffe-c2efa05949f6"},{"location":{"line":91,"column":5},"keyword":"Then ","text":"user clicks on login button","id":"9a7b5d0e-ec17-4aca-aef8-1c9ea4ed366f"},{"location":{"line":92,"column":4},"keyword":"And ","text":"user is on HomePage","id":"2166f6dc-ff74-4c73-b11f-ca69cada21e9"},{"location":{"line":93,"column":4},"keyword":"Then ","text":"close the browser","id":"8abaa28e-3230-4c1f-be06-26302502ab8b"}],"examples":[{"location":{"line":95,"column":4},"keyword":"Examples","tableHeader":{"location":{"line":96,"column":5},"cells":[{"location":{"line":96,"column":7},"value":"username"},{"location":{"line":96,"column":18},"value":"password"}],"id":"00652593-d649-4741-bba5-9dbb63c2207b"},"tableBody":[{"location":{"line":97,"column":5},"cells":[{"location":{"line":97,"column":7},"value":"muraribedasdc@gmail.com"},{"location":{"line":97,"column":33},"value":"selenium"}],"id":"5c4ad13e-7f9e-432a-948b-2c781bc152ff"}],"id":"850058bc-09a8-486f-a270-5d5a84f6382d"}],"id":"90d814c1-7796-4b52-82b2-07940486aa58"}}]},"comments":[{"location":{"line":23,"column":1},"text":"    #| murarik@gmail.com\t|\tselenium\t| "},{"location":{"line":24,"column":1},"text":"    #| murarib@gmail.com\t|\tselenium\t| "},{"location":{"line":25,"column":1},"text":"    #| murariec@gmail.com\t|\tselenium\t| "},{"location":{"line":26,"column":1},"text":"    #| murarie1@gmail.com\t|\tselenium\t| "},{"location":{"line":27,"column":1},"text":"    #| murarib23@gmail.com\t|\tselenium\t| "}]}},{"pickle":{"id":"aad0fcf6-67d1-4f4f-8a63-bb55fa6f4e4e","uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","name":"Fcaebook Login test scenario","language":"en","steps":[{"text":"user is already on login page","id":"d1e3970f-2415-49ee-9b33-47570420d710","astNodeIds":["2c2a03ea-d726-439d-a004-8e5038962dc0"]},{"text":"Title of the login page is facebooklogin","id":"fb68446e-445a-465d-9888-e3ae2a0e514e","astNodeIds":["bf12a599-d964-4752-b27f-c65301c31c2c"]},{"text":"user enters userName and password","id":"6f41fec4-1246-4b11-b487-7d2e19a21f08","astNodeIds":["fe6d5987-3498-4cb9-a514-d25e02587aca"]},{"text":"user clicks on login button","id":"08472a12-63c9-43d7-800e-a1d06e5eea91","astNodeIds":["2bc464c5-6740-4417-9679-0a60e625043c"]},{"text":"user is on HomePage","id":"c42b5121-c696-4079-b030-3bbb1a84e292","astNodeIds":["5e8fb65d-7e46-40e5-aeac-bbb3c773c935"]},{"text":"close the browser","id":"5c45cf65-f476-48c9-bfa9-6831513cc395","astNodeIds":["8e491879-d24d-4aef-8ec9-77468f88de9e"]}],"tags":[{"name":"@smokeTest","astNodeId":"a6c44c77-0278-4f0f-8b8e-dcd98bfb1dd3"}],"astNodeIds":["1f2b9a61-81ad-4b2f-9de0-4080151f4544"]}},{"pickle":{"id":"cd577298-6a92-4c21-afc0-6bbf808f5b9a","uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","name":"Fcaebook Login test scenario with parameterized the data","language":"en","steps":[{"text":"user is already on login page","id":"d0afb6f6-59c3-4672-bee0-8f8b6e3f8a8b","astNodeIds":["1d2d5111-227f-417f-ba02-53e1999d05c8","798cc0a7-98cc-4151-8457-81226c05914e"]},{"text":"Title of the login page is facebooklogin","id":"3fd5e86d-2287-4704-b877-ad64caef91b9","astNodeIds":["d2ea6c26-801c-433d-94f7-2229ac5c8a19","798cc0a7-98cc-4151-8457-81226c05914e"]},{"text":"user enters \"muraribec@gmail.com\" and \"selenium\"","id":"7b3baf92-31db-4c2a-89b4-c403d87ea8be","astNodeIds":["4dbdcea3-a502-4855-abb2-7286c1ab555b","798cc0a7-98cc-4151-8457-81226c05914e"]},{"text":"user clicks on login button","id":"d3b8bc51-37b2-42c8-8915-af3e2b943067","astNodeIds":["be8c807b-0013-432c-b0ab-5caaccce0fcf","798cc0a7-98cc-4151-8457-81226c05914e"]},{"text":"user is on HomePage","id":"6e022d70-841a-421f-9494-fe0c81e67e3e","astNodeIds":["861b9755-810d-40b0-aae1-1d5bf291e4b9","798cc0a7-98cc-4151-8457-81226c05914e"]},{"text":"close the browser","id":"3ca78074-1539-4a7b-9ba2-4f012c027861","astNodeIds":["ec94c97e-d30d-4674-b969-6ec2ff704e6e","798cc0a7-98cc-4151-8457-81226c05914e"]}],"astNodeIds":["4e928a53-66ee-4db2-917a-19a0112ac812","798cc0a7-98cc-4151-8457-81226c05914e"]}},{"pickle":{"id":"58495ebf-4cf5-4ad0-b030-e63c2d0186d8","uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","name":"Fcaebook Login test scenario with parameterized the data","language":"en","steps":[{"text":"user is already on login page","id":"d1d078e5-3c42-462e-be83-fd783360d1a9","astNodeIds":["aab7bfc2-14be-4599-9b3a-ccea1c61fa61","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]},{"text":"Title of the login page is facebooklogin","id":"ec0829d2-155f-4601-b45f-f3c2c30d7804","astNodeIds":["ded6228d-0cc1-401c-b074-97852bb50597","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]},{"text":"user enters \"muraribec@gmail.com\" and \"selenium\"","id":"203a7fa4-0684-4600-afbf-75ac827cf7ce","astNodeIds":["c5c53a65-31df-4fb3-8bc6-5c278ab6a421","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]},{"text":"user clicks on login button","id":"745548e1-fe5c-4c59-908d-400dc742a9a8","astNodeIds":["715a0d0c-ac25-4939-8e31-1fd0333f7962","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]},{"text":"user is on HomePage","id":"99a78d60-76a7-4202-9b37-069848392cb1","astNodeIds":["71cc889f-cb1c-4e5c-88f8-fdbb07e531ca","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]},{"text":"close the browser","id":"ecb5aaf5-a99b-4499-8084-7ddc968baca4","astNodeIds":["079ab6de-1c0f-49ea-9392-33a668b2dfd4","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]}],"astNodeIds":["5d27c54d-b1f5-4ef6-8469-a7f956d5e152","a77836ab-c64f-4dbc-b8d0-3a7ee325db64"]}},{"pickle":{"id":"9d9e39eb-d3bf-43d5-8a23-29b5b3ad6dce","uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","name":"Fcaebook Login test scenario with parameterized the data","language":"en","steps":[{"text":"user is already on login page","id":"e2fceb1a-11bc-46ee-88b3-890e1fd3d2e8","astNodeIds":["4b33e697-4ae6-41a0-bf49-3cb6e25b18bb","60cddf5b-c960-4ca8-88c7-236616b94d84"]},{"text":"Title of the login page is facebooklogin","id":"851a6c53-2fa2-4e55-9e53-36063e14f393","astNodeIds":["0f949ef3-5f63-4e99-a287-d682f64650f8","60cddf5b-c960-4ca8-88c7-236616b94d84"]},{"text":"user enters \"muraribec@gmail.com\" and \"selenium\"","id":"579adaae-bf3f-41db-9695-cd0355da009e","astNodeIds":["e0898643-059a-473c-be7a-ff57a7f2b914","60cddf5b-c960-4ca8-88c7-236616b94d84"]},{"text":"user clicks on login button","id":"2dd3be30-1ac3-47df-a303-e169307230a6","astNodeIds":["e9dce2ac-8426-474f-ac3d-700b7a6d4ca8","60cddf5b-c960-4ca8-88c7-236616b94d84"]},{"text":"user is on HomePage","id":"da0c53e7-b5a6-4979-b799-7f2ea43a7eae","astNodeIds":["29cbc1fc-4995-4472-8437-76de66b7290f","60cddf5b-c960-4ca8-88c7-236616b94d84"]},{"text":"close the browser","id":"7f257067-a6fa-44f7-a628-a248918ae72c","astNodeIds":["6ab3f150-8d18-4845-af8c-8b6c0eb18fc8","60cddf5b-c960-4ca8-88c7-236616b94d84"]}],"astNodeIds":["f05c4b65-e941-4b39-a54b-182f4de574b9","60cddf5b-c960-4ca8-88c7-236616b94d84"]}},{"pickle":{"id":"1900897e-cd12-482b-ba47-6bd25d36cc6b","uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","name":"Fcaebook Login test scenario with invalid parameterized the data","language":"en","steps":[{"text":"user is already on login page","id":"fd8c2653-2fa5-459c-bdac-324a0267dbf4","astNodeIds":["99c725b9-022c-492f-a041-3baa03293199","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]},{"text":"Title of the login page is facebooklogin","id":"d7d6b7c1-130a-4b20-8e33-2a8adfa38c4a","astNodeIds":["132130fd-7b96-4cd9-a4a8-a1c104676619","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]},{"text":"user enters \"muraribas@gmail.com\" and \"selenium\"","id":"58abd6da-3be4-43fc-8fb6-c8f2cb2778a1","astNodeIds":["2d85a5dd-f324-48ca-a4b3-6652866d8bc1","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]},{"text":"user clicks on login button","id":"b205d3eb-1756-4242-a703-d7db68f65c9a","astNodeIds":["2794ee29-6156-4dca-8049-02a006646358","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]},{"text":"user is on HomePage","id":"8b7b217a-a32b-4d6b-8604-9e3b8163fd83","astNodeIds":["6cb0d5bb-d45c-4c37-80b3-5a028be174d9","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]},{"text":"close the browser","id":"f72d5426-6982-4599-ad0c-c33b33356bf8","astNodeIds":["c5ccd213-2b7e-41e7-97e6-32307120f0d5","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]}],"astNodeIds":["3fe72681-1465-4860-a7d3-7f2d20102555","f38f4db3-5081-4431-b6cb-f31bcde6afb0"]}},{"pickle":{"id":"098fd27f-5ab6-420f-bcfc-bb9a93c37d69","uri":"file:///C:/Users/LENOVO/eclipse-workspace1/NadiyaBDDProject/src/test/resources/Login.feature","name":"Fcaebook Login test scenario with valid parameterized the data","language":"en","steps":[{"text":"user is already on login page","id":"a2e12106-4300-4fe9-bc40-8224a651611c","astNodeIds":["52bcde13-e148-4fbc-a9b7-d27af44beddf","64e217b0-324b-4a2f-a65a-209c96115e7b"]},{"text":"Title of the login page is facebooklogin","id":"10a9701b-aae6-4222-b146-79f9cd84fd35","astNodeIds":["cfbdbe5e-2768-4780-b24f-c0756ad600f5","64e217b0-324b-4a2f-a65a-209c96115e7b"]},{"text":"user enters \"muraribdsds@gmail.com\" and \"selenium\"","id":"65b3283a-0770-487f-804c-3737955b0922","astNodeIds":["d33c4b93-6aa9-4c3b-bbb5-246fb34ac355","64e217b0-324b-4a2f-a65a-209c96115e7b"]},{"text":"user clicks on login button","id":"809a7e79-790b-44e6-8336-1c207a595246","astNodeIds":["6f22252e-ab9c-4961-b5c1-3e3e9e0ef80c","64e217b0-324b-4a2f-a65a-209c96115e7b"]},{"text":"user is on HomePage","id":"62ee4a79-7a94-4df4-b27f-63a4007f2cad","astNodeIds":["c21869c4-2609-40ad-ada4-aab968c33a6c","64e217b0-324b-4a2f-a65a-209c96115e7b"]},{"text":"close the browser","id":"2abf825c-0772-4acf-b28a-c1b770b6a8d8","astNodeIds":["020b8fbf-9511-4720-9289-6e412010cf0c","64e217b0-324b-4a2f-a65a-209c96115e7b"]}],"tags":[{"name":"@Retesting","astNodeId":"3a0909de-fffc-4414-a5a8-92b6d85c10f8"}],"astNodeIds":["1c626c36-8c0d-419
